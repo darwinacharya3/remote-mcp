@@ -69,7 +69,7 @@ def summarize(start_date, end_date, category=None):
         return [dict(zip(cols, row)) for row in cur.fetchall()]
 
 
-@mcp.resource("expense://categories", "mime_type=application/json")
+@mcp.resource("expense://categories", mime_type="application/json")
 def categories():
     with open(CATEGORIES_PATH, "r", encoding="utf-8") as f:
         return f.read()
